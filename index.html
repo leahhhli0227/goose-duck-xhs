@@ -3,615 +3,430 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>笑薯，原来你也玩鹅鸭杀 · 鹅鸭杀 × 小红书</title>
+<title>笑薯，原来你也玩鹅鸭杀</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
 
   :root {
     --red: #FF2442;
     --yellow: #FFD600;
-    --purple: #7B2FBE;
     --dark: #1a1a2e;
-    --card-bg: #ffffff;
-    --text: #1a1a2e;
-    --text-light: #666;
-    --border: #f0f0f0;
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --border: #ebebeb;
+    --text: #111;
+    --muted: #888;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'Noto Sans SC', -apple-system, sans-serif;
-    background: #f7f7f9;
+    background: var(--bg);
     color: var(--text);
     line-height: 1.7;
+    font-size: 15px;
   }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(140deg, #1a1a2e 0%, #0f3460 100%);
+    padding: 72px 24px 56px;
+    text-align: center;
     position: relative;
     overflow: hidden;
-    padding: 80px 24px 60px;
-    text-align: center;
   }
-  .hero::before {
+  .hero::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(255,36,66,.18) 0%, transparent 60%),
-                radial-gradient(circle at 70% 30%, rgba(123,47,190,.18) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 25% 60%, rgba(255,36,66,.15) 0%, transparent 55%),
+                radial-gradient(ellipse at 75% 30%, rgba(255,214,0,.08) 0%, transparent 55%);
+    pointer-events: none;
   }
-  .hero-tag {
+  .hero-eyebrow {
     display: inline-block;
-    background: var(--red);
-    color: #fff;
-    font-size: 12px;
+    border: 1.5px solid rgba(255,36,66,.6);
+    color: var(--red);
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
     padding: 4px 14px;
     border-radius: 20px;
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 22px;
+    position: relative; z-index: 1;
   }
   .hero h1 {
-    font-size: clamp(28px, 6vw, 56px);
+    font-size: clamp(30px, 6vw, 58px);
     font-weight: 900;
     color: #fff;
     line-height: 1.2;
-    position: relative;
-    margin-bottom: 12px;
+    position: relative; z-index: 1;
+    margin-bottom: 14px;
   }
-  .hero h1 span { color: var(--yellow); }
+  .hero h1 em { color: var(--yellow); font-style: normal; }
   .hero-sub {
-    font-size: clamp(14px, 2.5vw, 18px);
-    color: rgba(255,255,255,.65);
-    position: relative;
-    margin-bottom: 32px;
+    font-size: 15px;
+    color: rgba(255,255,255,.5);
+    position: relative; z-index: 1;
+    margin-bottom: 28px;
   }
   .hero-quote {
     display: inline-block;
-    background: rgba(255,255,255,.08);
+    max-width: 580px;
+    background: rgba(255,255,255,.06);
     border-left: 3px solid var(--yellow);
-    border-radius: 0 12px 12px 0;
-    padding: 14px 24px;
-    font-size: 15px;
-    color: rgba(255,255,255,.85);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 22px;
+    font-size: 14px;
+    color: rgba(255,255,255,.75);
     font-style: italic;
-    max-width: 640px;
-    position: relative;
+    text-align: left;
+    position: relative; z-index: 1;
   }
 
-  /* ── SECTION WRAPPER ── */
-  .section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 24px;
-  }
-  .section-title {
+  /* LAYOUT */
+  .page { max-width: 860px; margin: 0 auto; padding: 56px 24px; }
+
+  .sec-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
-    color: var(--text);
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
-  .section-title .num {
-    width: 36px; height: 36px;
+  .sec-num {
+    width: 34px; height: 34px;
     background: var(--red);
     color: #fff;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 16px; font-weight: 900;
+    font-size: 14px; font-weight: 900;
     flex-shrink: 0;
   }
 
-  /* ── CARD ── */
   .card {
-    background: var(--card-bg);
-    border-radius: 16px;
-    padding: 28px 32px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    background: var(--card);
+    border-radius: 14px;
+    padding: 26px 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    margin-bottom: 16px;
   }
 
-  /* ── COLLAB TABLE ── */
+  .divider { height: 1px; background: var(--border); margin: 0 24px; }
+
+  /* 合作权益表格 */
   .collab-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    margin-top: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
   }
-  .collab-card {
-    border-radius: 14px;
-    padding: 22px 20px;
+  @media(max-width:580px){ .collab-grid { grid-template-columns: 1fr; } }
+
+  .collab-box {
+    border-radius: 12px;
+    padding: 20px;
     border: 1.5px solid var(--border);
   }
-  .collab-card.goose { border-color: #FFD600; background: #fffdf0; }
-  .collab-card.xhs   { border-color: #FF2442; background: #fff5f7; }
-  .collab-card-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  .collab-box.goose { background: #fffdf0; border-color: #ffe566; }
+  .collab-box.xhs   { background: #fff5f7; border-color: #ffc0cb; }
+  .collab-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
     margin-bottom: 10px;
   }
-  .collab-card.goose .collab-card-label { color: #b89300; }
-  .collab-card.xhs   .collab-card-label { color: var(--red); }
-  .collab-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
-  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .collab-box.goose .collab-label { color: #a07800; }
+  .collab-box.xhs   .collab-label { color: var(--red); }
+  .collab-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
   .tag {
-    background: rgba(0,0,0,.06);
-    border-radius: 6px;
-    padding: 3px 10px;
+    background: rgba(0,0,0,.05);
+    border-radius: 5px;
+    padding: 3px 9px;
     font-size: 12px;
-    color: var(--text-light);
+    color: #555;
   }
-  .tag.red { background: rgba(255,36,66,.1); color: var(--red); }
-  .tag.yellow { background: rgba(255,214,0,.2); color: #7a6000; }
+  .tag.r { background: rgba(255,36,66,.08); color: var(--red); }
+  .tag.y { background: rgba(255,214,0,.15); color: #7a6000; }
 
-  /* ── HIGHLIGHT BOX ── */
-  .highlight {
-    background: linear-gradient(135deg, #fff5f7, #fff0fb);
-    border: 1.5px solid rgba(255,36,66,.15);
-    border-radius: 14px;
-    padding: 24px 28px;
-    margin: 20px 0;
+  .notice {
+    background: #f7f7f9;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 4px;
   }
-  .highlight p { font-size: 15px; line-height: 1.8; color: #333; }
-  .highlight strong { color: var(--red); }
 
-  /* ── IMAGE BLOCK ── */
-  .img-block {
-    width: 100%;
+  /* 图片 */
+  .img-wrap {
     border-radius: 12px;
     overflow: hidden;
-    margin: 24px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    margin: 22px 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
   }
-  .img-block img { width: 100%; display: block; }
-  .img-caption {
-    background: #f7f7f9;
-    padding: 10px 16px;
+  .img-wrap img { width: 100%; display: block; }
+  .img-cap {
+    background: #f0f0f2;
+    padding: 8px 16px;
     font-size: 12px;
-    color: var(--text-light);
+    color: var(--muted);
     text-align: center;
   }
 
-  /* ── CLUE TIMELINE ── */
-  .timeline { position: relative; padding-left: 32px; }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 10px; top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--red), var(--purple));
-    border-radius: 2px;
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 28px;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -28px; top: 6px;
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background: var(--red);
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px var(--red);
-  }
-  .timeline-day {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--red);
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-  .timeline-content {
+  /* 主题intro */
+  .theme-intro {
     background: #fff;
-    border-radius: 10px;
-    padding: 14px 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
-    font-size: 14px;
-    color: #333;
+    border-radius: 14px;
+    padding: 24px 26px;
+    border-left: 4px solid var(--red);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
   }
-  .timeline-content em {
-    display: block;
-    margin-top: 8px;
-    padding: 10px 14px;
-    background: #f7f7f9;
-    border-left: 3px solid var(--purple);
+  .theme-intro p { font-size: 14px; color: #333; line-height: 1.8; }
+  .theme-intro blockquote {
+    margin-top: 14px;
+    padding: 10px 18px;
+    border-left: 3px solid #ccc;
+    background: #f9f9f9;
     border-radius: 0 8px 8px 0;
     font-style: italic;
-    color: #555;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  /* ── 8-WEEK SCHEDULE ── */
-  .week-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
-  }
-  .week-card {
-    border-radius: 12px;
-    padding: 18px 16px;
-    border: 1.5px solid var(--border);
-    background: #fff;
-    transition: box-shadow .2s;
-  }
-  .week-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.1); }
-  .week-card.highlight-week {
-    border-color: var(--red);
-    background: linear-gradient(135deg, #fff5f7, #fff);
-  }
-  .week-num {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-light);
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .week-theme {
+    color: #666;
     font-size: 14px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 6px;
   }
-  .week-desc { font-size: 12px; color: var(--text-light); line-height: 1.5; }
 
-  /* ── CONTENT TABLE ── */
-  .content-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-  .content-table th {
+  /* 嘉宾主题四宫格 */
+  .guest-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+  }
+  @media(max-width:640px){ .guest-grid { grid-template-columns: repeat(2,1fr); } }
+  .guest-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 14px;
+    border: 1.5px solid var(--border);
+    text-align: center;
+  }
+  .guest-emoji { font-size: 26px; margin-bottom: 8px; }
+  .guest-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .guest-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* 直播前后 */
+  .phase-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    border-radius: 20px; padding: 4px 13px;
+    margin-bottom: 10px;
+  }
+  .phase-label.pre  { background: #e8f0fe; color: #1a56db; }
+  .phase-label.post { background: #f3e8ff; color: #7e22ce; }
+
+  .bullet-list { padding-left: 18px; }
+  .bullet-list li { margin-bottom: 7px; font-size: 14px; }
+
+  /* 直播后切片表 */
+  .slice-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  .slice-table th {
     background: var(--dark);
     color: #fff;
-    padding: 12px 16px;
+    padding: 11px 14px;
     font-size: 13px;
-    text-align: left;
     font-weight: 600;
+    text-align: left;
   }
-  .content-table th:first-child { border-radius: 8px 0 0 0; }
-  .content-table th:last-child  { border-radius: 0 8px 0 0; }
-  .content-table td {
-    padding: 12px 16px;
+  .slice-table th:first-child { border-radius: 8px 0 0 0; }
+  .slice-table th:last-child  { border-radius: 0 8px 0 0; }
+  .slice-table td {
+    padding: 11px 14px;
     border-bottom: 1px solid var(--border);
     font-size: 13px;
     vertical-align: top;
+    line-height: 1.6;
   }
-  .content-table tr:last-child td { border-bottom: none; }
-  .content-table tr:nth-child(even) td { background: #fafafa; }
+  .slice-table tr:last-child td { border-bottom: none; }
+  .slice-table tr:nth-child(even) td { background: #fafafa; }
 
-  /* ── ARCHIVE CARD ── */
-  .archive-card {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border-radius: 16px;
-    padding: 32px;
-    color: #fff;
-    font-family: 'Courier New', monospace;
-    max-width: 420px;
-    margin: 24px auto;
-    box-shadow: 0 8px 32px rgba(26,26,46,.3);
-    position: relative;
-    overflow: hidden;
-  }
-  .archive-card::before {
-    content: '🦆';
-    position: absolute;
-    right: 20px; top: 20px;
-    font-size: 48px;
-    opacity: .15;
-  }
-  .archive-header {
-    font-size: 11px;
-    color: var(--yellow);
-    letter-spacing: 2px;
-    font-weight: 700;
-    border-bottom: 1px solid rgba(255,255,255,.15);
-    padding-bottom: 12px;
-    margin-bottom: 16px;
-  }
-  .archive-row { margin-bottom: 10px; }
-  .archive-label { font-size: 11px; color: rgba(255,255,255,.5); }
-  .archive-val { font-size: 14px; color: #fff; font-weight: 600; }
-  .stars { color: var(--yellow); letter-spacing: 2px; }
-  .archive-quote {
-    border-left: 2px solid var(--yellow);
-    padding-left: 12px;
-    font-style: italic;
-    color: rgba(255,255,255,.7);
-    font-size: 13px;
-    margin: 14px 0;
-  }
-  .archive-verdict {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,.15);
-  }
-  .verdict-label { font-size: 11px; color: rgba(255,255,255,.5); margin-bottom: 8px; }
-  .verdict-options { display: flex; flex-direction: column; gap: 6px; }
-  .verdict-option {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 13px; color: rgba(255,255,255,.7);
-  }
-  .verdict-option.active { color: var(--yellow); font-weight: 700; }
-  .verdict-option .box {
-    width: 14px; height: 14px;
-    border: 1.5px solid rgba(255,255,255,.3);
-    border-radius: 3px;
-    flex-shrink: 0;
-  }
-  .verdict-option.active .box {
-    background: var(--yellow);
-    border-color: var(--yellow);
-  }
-
-  /* ── EPISODE THEMES ── */
-  .theme-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-    margin-top: 12px;
-  }
-  .theme-card {
-    background: #fff;
+  /* 游戏薯联动 */
+  .link-box {
+    background: var(--card);
     border-radius: 12px;
-    padding: 18px 16px;
+    padding: 18px 22px;
     border: 1.5px solid var(--border);
     font-size: 13px;
+    word-break: break-all;
   }
-  .theme-emoji { font-size: 24px; margin-bottom: 8px; }
-  .theme-title { font-weight: 700; margin-bottom: 4px; }
-  .theme-desc { color: var(--text-light); font-size: 12px; line-height: 1.5; }
+  .link-box a { color: var(--red); text-decoration: none; }
+  .link-box a:hover { text-decoration: underline; }
 
-  /* ── UGC SECTION ── */
-  .ugc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 600px) { .ugc-grid { grid-template-columns: 1fr; } }
-  .ugc-card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 22px 20px;
-    border: 1.5px solid var(--border);
-  }
-  .ugc-icon { font-size: 28px; margin-bottom: 10px; }
-  .ugc-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-  .ugc-tag { display: inline-block; background: #f0f0f0; border-radius: 6px; padding: 2px 10px; font-size: 12px; color: #888; margin-bottom: 10px; }
-  .ugc-desc { font-size: 13px; color: var(--text-light); line-height: 1.6; }
-
-  /* ── VALUE TABLE ── */
-  .value-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 14px;
-  }
-  .value-card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 22px 18px;
-    border-top: 3px solid var(--red);
-    box-shadow: 0 2px 10px rgba(0,0,0,.05);
-  }
-  .value-who { font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: 1px; margin-bottom: 8px; }
-  .value-text { font-size: 13px; color: #444; line-height: 1.6; }
-
-  /* ── FOOTER ── */
+  /* FOOTER */
   .footer {
     background: var(--dark);
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.4);
     text-align: center;
-    padding: 32px 24px;
-    font-size: 13px;
+    padding: 28px 24px;
+    font-size: 12px;
   }
-  .footer strong { color: var(--yellow); }
-
-  /* ── DIVIDER ── */
-  .divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
-    margin: 0 24px;
-  }
-
-  /* ── PHASE BADGE ── */
-  .phase { display: inline-block; background: var(--purple); color: #fff; font-size: 11px; font-weight: 700; border-radius: 20px; padding: 3px 12px; margin-bottom: 10px; letter-spacing: 1px; }
-  .phase.pre { background: #0f3460; }
-  .phase.live { background: var(--red); }
-  .phase.post { background: var(--purple); }
-
-  @media (max-width: 600px) {
-    .card { padding: 20px 16px; }
-    .section { padding: 40px 16px; }
-    .archive-card { padding: 22px; }
-  }
+  .footer strong { color: rgba(255,255,255,.7); }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">鹅鸭杀 × 小红书 · 2026暑期企划</div>
-  <h1>笑薯，原来你也<span>玩鹅鸭杀</span></h1>
-  <p class="hero-sub">暑假一起鹅鸭趴 · 明星长线直播IP</p>
+  <div class="hero-eyebrow">鹅鸭杀 × 小红书</div>
+  <h1>笑薯，原来你也<em>玩鹅鸭杀</em></h1>
+  <p class="hero-sub">暑假一起鹅鸭趴 · 明星长线直播企划</p>
   <div class="hero-quote">
     每周六晚，海涛在小红书开一扇直播之门——猜猜今晚是谁来一起鹅鸭趴。
   </div>
 </div>
 
-<!-- SECTION 1: 合作背景 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">一</div>
+<!-- 一、合作背景及权益 -->
+<div class="page">
+  <div class="sec-title">
+    <div class="sec-num">一</div>
     合作背景及权益
   </div>
 
-  <div class="highlight">
-    <p>鹅鸭杀拟邀艺人<strong>「杜海涛」</strong>发起 <strong>1-2个月</strong> 的长期独家直播企划，计划每一期直播邀请 <strong>1-2位圈内好友</strong> 加入共玩鹅鸭杀；希望与小红书共策传播事件。</p>
+  <div class="card">
+    <p style="font-size:14px; line-height:1.9; color:#333;">
+      鹅鸭杀拟邀艺人<strong>「杜海涛」</strong>发起1-2月的长期独家直播企划，计划每一期直播将邀请<strong>1-2位圈内好友</strong>加入直播共玩鹅鸭杀；希望与小红书共策传播事件。
+    </p>
+    <div style="margin-top:16px; display:flex; flex-direction:column; gap:10px;">
+      <div style="background:#f9f9f9; border-radius:8px; padding:14px 16px; font-size:13px; line-height:1.8;">
+        <strong>长线直播：</strong>小红书与游戏侧共创活动主题及方案；游戏方负责艺人邀约及直播执行细节，小红书侧配合开播、提供资源支持及部分游戏主播K的邀约；
+      </div>
+      <div style="background:#f9f9f9; border-radius:8px; padding:14px 16px; font-size:13px; line-height:1.8;">
+        <strong>高点直播：</strong>如某一期高点，加入游戏薯的局，则游戏侧负责邀约艺人，小红书负责高点直播的策划执行落地；
+      </div>
+    </div>
   </div>
 
   <div class="collab-grid">
-    <div class="collab-card goose">
-      <div class="collab-card-label">🦆 鹅鸭杀</div>
-      <h3>游戏方负责</h3>
-      <div class="tag-list">
-        <span class="tag yellow">艺人成本</span>
-        <span class="tag yellow">PUGC制作传播</span>
-        <span class="tag yellow">激励费用</span>
-        <span class="tag yellow">拍脸/活动中心资源露出</span>
-        <span class="tag yellow">艺人对接执行</span>
-        <span class="tag yellow">PUGC切片制作传播</span>
-        <span class="tag yellow">角色三方号内容</span>
+    <div class="collab-box goose">
+      <div class="collab-label">🦆 鹅鸭杀</div>
+      <h3>预算</h3>
+      <div class="tag-row">
+        <span class="tag y">艺人成本</span>
+        <span class="tag y">PUGC制作传播</span>
+        <span class="tag y">激励费用</span>
+      </div>
+      <h3 style="margin-top:14px;">资源</h3>
+      <div class="tag-row">
+        <span class="tag y">拍脸/活动中心等资源露出</span>
+      </div>
+      <h3 style="margin-top:14px;">主要事项</h3>
+      <div class="tag-row">
+        <span class="tag y">艺人对接执行</span>
+        <span class="tag y">PUGC切片制作传播</span>
+        <span class="tag y">角色三方号内容</span>
       </div>
     </div>
-    <div class="collab-card xhs">
-      <div class="collab-card-label">📕 小红书</div>
-      <h3>平台方负责</h3>
-      <div class="tag-list">
-        <span class="tag red">开屏</span>
-        <span class="tag red">WOW Card</span>
-        <span class="tag red">搜索 One Box</span>
-        <span class="tag red">NNS / 活动通知 / Push</span>
-        <span class="tag red">直播MF流</span>
-        <span class="tag red">专项流量</span>
-        <span class="tag red">游戏主播建联邀约</span>
-        <span class="tag red">高点直播策划执行</span>
-        <span class="tag red">传播预埋热点支持</span>
+
+    <div class="collab-box xhs">
+      <div class="collab-label">📕 小红书</div>
+      <h3>预算</h3>
+      <div class="tag-row">
+        <span class="tag r">游戏垂类主播/K</span>
+        <span class="tag r">「游戏薯的局」执行成本</span>
+      </div>
+      <h3 style="margin-top:14px;">资源</h3>
+      <div class="tag-row">
+        <span class="tag r">开屏</span>
+        <span class="tag r">wowcard</span>
+        <span class="tag r">搜索one box</span>
+        <span class="tag r">nns/活动通知/push</span>
+        <span class="tag r">直播MF流</span>
+        <span class="tag r">专项流量</span>
+      </div>
+      <h3 style="margin-top:14px;">主要事项</h3>
+      <div class="tag-row">
+        <span class="tag r">游戏主播建联邀约</span>
+        <span class="tag r">高点直播策划执行落地</span>
+        <span class="tag r">传播预埋热点支持</span>
       </div>
     </div>
   </div>
 
-  <div class="card" style="margin-top:20px; background:#f7f7f9; border:none;">
-    <p style="font-size:13px; color:#888; text-align:center;">📌 策划/执行双方运营人力共担</p>
-  </div>
+  <div class="notice">📌 策划/执行双方运营人力共担</div>
 
-  <div class="img-block">
-    <img src="https://xhs-doc.xhscdn.com/1040025031t7bfv63580c2vdnuc?redoc-w=1600&redoc-h=450" alt="鹅鸭杀活动中心示意图" />
-    <div class="img-caption">鹅鸭杀游戏内活动中心示意</div>
+  <div class="img-wrap">
+    <img src="https://xhs-doc.xhscdn.com/1040025031t7bfv63580c2vdnuc?redoc-w=1600&redoc-h=450" alt="鹅鸭杀活动中心" />
+    <div class="img-cap">鹅鸭杀游戏内活动中心示意</div>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- SECTION 2: 主题 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">二</div>
-    主题 Demo：笑薯，原来你也玩鹅鸭杀
+<!-- 二、主题demo -->
+<div class="page">
+  <div class="sec-title">
+    <div class="sec-num">二</div>
+    主题demo：笑薯，原来你也玩鹅鸭杀
   </div>
 
-  <div class="highlight">
-    <p>围绕鹅鸭杀暑期大主题<strong>「暑假一起鹅鸭趴」</strong>，不做一次性的明星直播，做一个<strong>长期持续、有悬念追更逻辑的内容IP</strong>。</p>
-    <p style="margin-top:10px;">「鹅鸭趴」是派对的壳，「笑薯」是小红书的魂——<strong>派对感制造氛围，悬念感制造传播。</strong></p>
+  <div class="theme-intro">
+    <p>围绕鹅鸭杀暑期大主题「暑假一起鹅鸭趴」，不做一次性的明星直播，做一个<strong>长期持续、有悬念追更逻辑的内容IP</strong>；「鹅鸭趴」是派对的壳，「笑薯」是小红书的魂——派对感制造氛围，悬念感制造传播。</p>
+    <blockquote>每周六晚，海涛在小红书开一扇直播之门——猜猜今晚是谁来一起鹅鸭趴。</blockquote>
   </div>
 
-  <!-- 猜人机制 -->
   <div class="card">
-    <h3 style="font-size:17px; font-weight:800; margin-bottom:6px;">🔍 核心机制：线索猜人</h3>
-    <p style="font-size:13px; color:var(--text-light); margin-bottom:20px;">每期直播嘉宾不提前公布，由杜海涛在直播前分批投放线索，悬念串联整个长线内容。</p>
+    <p style="font-size:14px; line-height:1.9; color:#333;">
+      <strong>在海涛的局里，玩鹅鸭杀的是谁？</strong>这是整个IP的传播起点，每期直播嘉宾不提前公布，由杜海涛/游戏在直播前投放线索，直播公布揭晓，悬念串联整个长线内容。
+    </p>
+  </div>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-day">D-5 · 周一</div>
-        <div class="timeline-content">
-          杜海涛发笔记，文字 + 模糊剪影图
-          <em>「这周我拉了一个人进来，他上次当着全国人民的面哭了——但在我局里，他哭不出来。」</em>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-day">D-3 · 周三</div>
-        <div class="timeline-content">
-          通话截图 / 语音片段
-          <em>对方备注打码，头像轮廓可见，聊天内容透露关键信息。</em>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-day">D-1 · 周五</div>
-        <div class="timeline-content">
-          文字线索，难度降低，给还没猜出来的人最后一次机会
-          <em>「提示：他最近在准备一件大事，但这周六晚上他得先来我这里当卧底。」</em>
-        </div>
-      </div>
-      <div class="timeline-item" style="margin-bottom:0">
-        <div class="timeline-day">直播当天 · 揭晓</div>
-        <div class="timeline-content">
-          嘉宾现身，猜对的用户截图发话题，官方转发点赞——当天话题天然爆发。
-        </div>
-      </div>
+  <div class="img-wrap">
+    <img src="https://xhs-doc.xhscdn.com/104004dg32311jub574063n99kg?redoc-w=1182&redoc-h=420" alt="线索猜人形式参考" />
+    <div class="img-cap">线索投放形式参考——猜猜我是谁、明星猜剪影、号外等创意形态</div>
+  </div>
+
+  <!-- 嘉宾主题 -->
+  <div class="guest-grid">
+    <div class="guest-card">
+      <div class="guest-emoji">💑</div>
+      <div class="guest-name">杜海涛 × 沈梦辰</div>
+      <div class="guest-desc">八百个心眼子，当情侣开始玩鹅鸭杀</div>
     </div>
-  </div>
-
-  <div class="img-block">
-    <img src="https://xhs-doc.xhscdn.com/104004dg32311jub574063n99kg?redoc-w=1182&redoc-h=420" alt="线索猜人创意示意" />
-    <div class="img-caption">线索猜人视觉形式参考——剪影、通缉令、号外等多种创意形态</div>
-  </div>
-
-  <!-- 嘉宾主题设想 -->
-  <div class="card">
-    <h3 style="font-size:17px; font-weight:800; margin-bottom:16px;">🎭 嘉宾主题设想</h3>
-    <div class="theme-grid">
-      <div class="theme-card">
-        <div class="theme-emoji">💑</div>
-        <div class="theme-title">杜海涛 × 沈梦辰</div>
-        <div class="theme-desc">八百个心眼子，当情侣开始玩鹅鸭杀</div>
-      </div>
-      <div class="theme-card">
-        <div class="theme-emoji">🎤</div>
-        <div class="theme-title">杜海涛 × 歌手</div>
-        <div class="theme-desc">激情开麦！语音房秒变KTV</div>
-      </div>
-      <div class="theme-card">
-        <div class="theme-emoji">🎙️</div>
-        <div class="theme-title">杜海涛 × 喜人/脱口秀</div>
-        <div class="theme-desc">巧舌如簧篇！口艺人同台「演戏」谁最能说？</div>
-      </div>
-      <div class="theme-card">
-        <div class="theme-emoji">🌍</div>
-        <div class="theme-title">杜海涛 × 留学生</div>
-        <div class="theme-desc">海涛英文水平大曝光？全英版鹅鸭杀首次登场</div>
-      </div>
+    <div class="guest-card">
+      <div class="guest-emoji">🎤</div>
+      <div class="guest-name">杜海涛 × 歌手</div>
+      <div class="guest-desc">激情开麦！语音房秒变KTV</div>
     </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 3: 内容产出 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">三</div>
-    每期标配内容产出
+    <div class="guest-card">
+      <div class="guest-emoji">🎙️</div>
+      <div class="guest-name">杜海涛 × 喜人/脱口秀演员</div>
+      <div class="guest-desc">巧舌如簧篇！口艺人同台「演戏」谁最能说？</div>
+    </div>
+    <div class="guest-card">
+      <div class="guest-emoji">🌍</div>
+      <div class="guest-name">杜海涛 × 留学生</div>
+      <div class="guest-desc">海涛英文水平大曝光？以防你没见过全英版鹅鸭杀</div>
+    </div>
   </div>
 
   <!-- 直播前 -->
-  <div style="margin-bottom:16px;">
-    <span class="phase pre">📣 直播前</span>
+  <div style="margin-top:28px;">
+    <span class="phase-label pre">📣 直播前</span>
     <div class="card">
-      <ul style="font-size:14px; line-height:2; padding-left:18px;">
-        <li>「派对请柬」海报（嘉宾打码版，评论区开放填空互动）</li>
-        <li>梯度线索笔记 × 3条（杜海涛个人号发布）</li>
-        <li>嘉宾被邀请后的「回应互动」（带动嘉宾粉丝提前进场）</li>
+      <ul class="bullet-list">
+        <li>「派对请柬」海报（嘉宾打码版）</li>
+        <li>嘉宾线索笔记</li>
       </ul>
     </div>
   </div>
 
-  <!-- 直播中 -->
-  <div style="margin-bottom:16px;">
-    <span class="phase live">🔴 直播当天</span>
-    <div class="card">
-      <ul style="font-size:14px; line-height:2; padding-left:18px;">
-        <li>小红书直播间作为主阵地</li>
-        <li>官方号同步发<strong>实时名场面笔记</strong>（每20-30分钟一条，语气像朋友群实时播报）</li>
-        <li>直播结束前固定5分钟「趴后聊聊」环节——所有人放下游戏，聊「今晚谁最坏」，专为产出金句设计</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 直播后 -->
+  <!-- 直播后切片 -->
   <div>
-    <span class="phase post">📱 直播后48小时（最关键）</span>
+    <span class="phase-label post">📱 直播后切片</span>
     <div class="card" style="padding:0; overflow:hidden;">
-      <table class="content-table">
+      <table class="slice-table">
         <thead>
           <tr>
             <th>内容</th>
@@ -622,263 +437,45 @@
         <tbody>
           <tr>
             <td><strong>🃏 鹅鸭档案卡</strong></td>
-            <td>模板图文</td>
-            <td>每期必出，格式锁死，多期积累后天然形成「娱乐圈卧底图鉴」</td>
+            <td>模版图文</td>
+            <td>每期必出，风格一致，作为贯穿全程的核心物料；多期积累后天然形成「娱乐圈卧底图鉴」</td>
           </tr>
           <tr>
-            <td><strong>✂️ 名场面cut</strong></td>
-            <td>15-30秒竖版视频 × 3-5条</td>
-            <td>主攻背刺 / 崩溃 / 神操作 / 抽象瞬间</td>
+            <td><strong>✂️ 名场面cut/对局高光时刻</strong></td>
+            <td>视频</td>
+            <td>主攻背刺/崩溃/神操作/抽象瞬间</td>
           </tr>
           <tr>
-            <td><strong>💬 趴后聊聊</strong></td>
-            <td>30-60秒竖版视频</td>
-            <td>像朋友事后复盘，轻松语气，有派对散场余温感</td>
+            <td><strong>💬 「趴后聊聊」分析</strong></td>
+            <td>视频</td>
+            <td>像朋友事后复盘，轻松语气</td>
           </tr>
           <tr>
-            <td><strong>⭐ 嘉宾高光剪辑</strong></td>
-            <td>按人头出</td>
-            <td>嘉宾粉丝必看，嘉宾转发带量</td>
-          </tr>
-          <tr>
-            <td><strong>📸 趴照合影海报</strong></td>
-            <td>游戏合影风格海报</td>
-            <td>所有参与者排排站，嘉宾转发，粉丝存图，8期集齐成「暑假全家福」</td>
+            <td><strong>📸 「趴照」合影海报</strong></td>
+            <td>游戏合影</td>
+            <td>嘉宾转发，粉丝存图</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- 档案卡 -->
-  <h3 style="font-size:17px; font-weight:800; margin: 32px 0 16px; text-align:center;">🃏 鹅鸭档案卡 · 贯穿全程核心物料</h3>
-  <div class="archive-card">
-    <div class="archive-header">笑薯，你也玩鹅鸭杀 · 第 X 期 &nbsp;|&nbsp; 暑假一起鹅鸭趴</div>
-
-    <div class="archive-row">
-      <div class="archive-label">嘉宾</div>
-      <div class="archive-val">XXX</div>
+  <!-- 游戏薯联动 -->
+  <div style="margin-top:28px;">
+    <div class="sec-title" style="font-size:17px; margin-bottom:14px;">
+      🎮 游戏薯的局联动
     </div>
-    <div class="archive-row">
-      <div class="archive-label">本期身份</div>
-      <div class="archive-val">🦆 鸭（卧底）</div>
-    </div>
-    <div class="archive-row">
-      <div class="archive-label">存活时长</div>
-      <div class="archive-val">XX 分钟</div>
-    </div>
-    <div class="archive-row">
-      <div class="archive-label">暴露指数</div>
-      <div class="archive-val"><span class="stars">★★★</span><span style="color:rgba(255,255,255,.2)">★★</span></div>
-    </div>
-
-    <div class="archive-row" style="margin-top:14px;">
-      <div class="archive-label">致命弱点</div>
-      <div class="archive-val" style="font-size:13px;">朋友一质疑就开始大声说话</div>
-    </div>
-
-    <div class="archive-quote">「我是好人！你们不信我你们后悔！」</div>
-
-    <div class="archive-row">
-      <div class="archive-label">海涛评价</div>
-      <div class="archive-val" style="font-size:13px; color:rgba(255,255,255,.7);">嘴硬心软，六亲不认型选手</div>
-    </div>
-
-    <div class="archive-verdict">
-      <div class="verdict-label">综合评定</div>
-      <div class="verdict-options">
-        <div class="verdict-option"><div class="box"></div>天生卧底胚子</div>
-        <div class="verdict-option active"><div class="box"></div>不适合做卧底</div>
-        <div class="verdict-option"><div class="box"></div>下期还敢来吗</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 4: 8周节奏 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">四</div>
-    8周活动节奏
-  </div>
-
-  <div class="week-grid">
-    <div class="week-card">
-      <div class="week-num">第 1 期</div>
-      <div class="week-theme">开局定调</div>
-      <div class="week-desc">杜海涛 + 强关系老友，建立「被坑」人设，确立节目基调</div>
-    </div>
-    <div class="week-card">
-      <div class="week-num">第 2 期</div>
-      <div class="week-theme">悬念启动</div>
-      <div class="week-desc">引入第一位"意外嘉宾"，猜人游戏正式开始</div>
-    </div>
-    <div class="week-card">
-      <div class="week-num">第 3 期</div>
-      <div class="week-theme">扩圈造势</div>
-      <div class="week-desc">跨圈层嘉宾加入，影视 / 音乐 / 综艺圈层拉开</div>
-    </div>
-    <div class="week-card">
-      <div class="week-num">第 4 期</div>
-      <div class="week-theme">高潮积累</div>
-      <div class="week-desc">嘉宾化学反应持续发酵，用户征集活动启动</div>
-    </div>
-    <div class="week-card">
-      <div class="week-num">第 5 期</div>
-      <div class="week-theme">意外反转</div>
-      <div class="week-desc">引入强反差嘉宾，制造本轮最大话题节点</div>
-    </div>
-    <div class="week-card">
-      <div class="week-num">第 6 期</div>
-      <div class="week-theme">平台联动</div>
-      <div class="week-desc">混入小红书主播，打通平台内容生态，引流双向粉丝</div>
-    </div>
-    <div class="week-card highlight-week">
-      <div class="week-num">第 7 期 ⭐</div>
-      <div class="week-theme">观众心愿局</div>
-      <div class="week-desc">用户票选嘉宾实现，参与感最强的一期</div>
-    </div>
-    <div class="week-card highlight-week">
-      <div class="week-num">第 8 期 🏆</div>
-      <div class="week-theme">卧底王决赛</div>
-      <div class="week-desc">历期高光嘉宾回归，悬念收口，颁出荣誉称号</div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 5: 用户参与 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">五</div>
-    用户参与设计
-  </div>
-
-  <div class="ugc-grid">
-    <div class="ugc-card">
-      <div class="ugc-icon">🙋</div>
-      <div class="ugc-title">「我也要进局」征集</div>
-      <div class="ugc-tag">#我想拉谁进海涛的局</div>
-      <div class="ugc-desc">用户发笔记说出心目中的嘉宾人选、判断ta是鹅还是鸭、致命弱点是什么。杜海涛本人每周筛选，从中决定<strong>第7期嘉宾</strong>。</div>
-    </div>
-    <div class="ugc-card">
-      <div class="ugc-icon">💥</div>
-      <div class="ugc-title">「民间局翻车现场」</div>
-      <div class="ugc-tag">#笑薯你也玩鹅鸭杀</div>
-      <div class="ugc-desc">用户发自己和朋友被背刺的笔记。官方每周精选，做成「本周民间最炸名场面」合集，在下一期直播前一天发出——<strong>话题全周都在跑，不依赖直播时间</strong>。</div>
-    </div>
-  </div>
-
-  <div class="card" style="margin-top:16px;">
-    <h3 style="font-size:15px; font-weight:800; margin-bottom:14px;">🪩 固定派对仪式感</h3>
-    <div style="display:flex; flex-direction:column; gap:12px;">
-      <div style="display:flex; gap:12px; align-items:flex-start;">
-        <span style="font-size:20px;">📢</span>
-        <div>
-          <div style="font-weight:700; font-size:14px;">开趴暗号</div>
-          <div style="font-size:13px; color:var(--text-light);">杜海涛每期固定开场词「派对开始，卧底就位」，弹幕跟打，形成仪式感</div>
-        </div>
-      </div>
-      <div style="display:flex; gap:12px; align-items:flex-start;">
-        <span style="font-size:20px;">🎵</span>
-        <div>
-          <div style="font-weight:700; font-size:14px;">入场BGM</div>
-          <div style="font-size:13px; color:var(--text-light);">每期嘉宾进入直播间时有专属入场音乐，根据嘉宾风格定制，当晚即成梗</div>
-        </div>
-      </div>
-      <div style="display:flex; gap:12px; align-items:flex-start;">
-        <span style="font-size:20px;">🏅</span>
-        <div>
-          <div style="font-weight:700; font-size:14px;">悬念主线</div>
-          <div style="font-size:13px; color:var(--text-light);">全程追问「谁是娱乐圈最会演的卧底？」每期更新卧底积分排行榜</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 6: 游戏薯 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">六</div>
-    游戏薯的局 · 平台联动
-  </div>
-
-  <div class="highlight">
-    <p>第6期引入小红书游戏主播混入明星局，实现<strong>平台内容生态打通</strong>——明星粉丝引流至主播，主播粉丝引流至直播，双向扩圈。</p>
-  </div>
-
-  <div class="card" style="background: linear-gradient(135deg, #f0f7ff, #fff); border: 1.5px solid #dbeafe;">
-    <p style="font-size:14px; color:#444; text-align:center; line-height:2;">
-      🎮 游戏垂类主播建联邀约由小红书负责<br/>
-      💡 建议选 <strong>1位游戏向主播</strong>（提升竞技质感）+ <strong>1位搞笑/社交向主播</strong>（增加娱乐化表达）
-    </p>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 7: 收官 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">七</div>
-    收官设计 · 第8期
-  </div>
-
-  <div class="card" style="background: linear-gradient(135deg, #1a1a2e, #0f3460); color:#fff; border:none;">
-    <h3 style="font-size:20px; font-weight:900; color:var(--yellow); margin-bottom:16px; text-align:center;">🏆 卧底王之夜 · 暑假收官趴</h3>
-    <ul style="font-size:14px; line-height:2.2; padding-left:18px; color:rgba(255,255,255,.85);">
-      <li>历期高光嘉宾全部回归，打一局终极大局</li>
-      <li>根据8期积累数据，颁出「暑假鹅鸭趴荣誉称号」——每人一个专属称号，做成收官海报</li>
-      <li>官方出2分钟收官混剪，8周名场面全回顾</li>
-      <li>8张档案卡集合成「娱乐圈卧底图鉴」完整收官海报</li>
-    </ul>
-    <div style="margin-top:20px; text-align:center; padding:16px; background:rgba(255,214,0,.1); border-radius:10px; border:1px solid rgba(255,214,0,.3);">
-      <p style="font-style:italic; color:var(--yellow); font-size:15px; line-height:1.8;">
-        「这个暑假，你来过这里。<br/>下次，轮到你了。」
-      </p>
-      <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:8px;">#笑薯你也玩鹅鸭杀 · 活动结束，UGC长尾继续</p>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 8: 核心价值 -->
-<div class="section">
-  <div class="section-title">
-    <div class="num">八</div>
-    核心价值总结
-  </div>
-
-  <div class="value-grid">
-    <div class="value-card">
-      <div class="value-who">对厂商</div>
-      <div class="value-text">明星资源撬动小红书内容生态，8周持续曝光，在平台建立游戏内容根据地</div>
-    </div>
-    <div class="value-card">
-      <div class="value-who">对小红书</div>
-      <div class="value-text">独家内容IP，话题从直播延伸至社区，激活游戏品类UGC长尾</div>
-    </div>
-    <div class="value-card">
-      <div class="value-who">对用户</div>
-      <div class="value-text">猜人参与、发笔记打卡、民间局共创，有真实参与感，不只是围观者</div>
-    </div>
-    <div class="value-card">
-      <div class="value-who">对杜海涛</div>
-      <div class="value-text">固定「趴主」人设，8周持续曝光，有记忆点的内容IP</div>
+    <div class="link-box">
+      <a href="https://fe-static-1251524319.cos.ap-shanghai.myqcloud.com/formula-static/aibibp/liuli3/28rjj9cd/28rjj9cd.html#why" target="_blank">
+        https://fe-static-1251524319.cos.ap-shanghai.myqcloud.com/formula-static/aibibp/liuli3/28rjj9cd/28rjj9cd.html#why
+      </a>
     </div>
   </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  <strong>笑薯，原来你也玩鹅鸭杀</strong> &nbsp;·&nbsp; 鹅鸭杀 × 小红书 &nbsp;·&nbsp; 暑假一起鹅鸭趴 2026
+  <strong>笑薯，原来你也玩鹅鸭杀</strong> &nbsp;·&nbsp; 鹅鸭杀 × 小红书 &nbsp;·&nbsp; 暑假一起鹅鸭趴
 </div>
 
 </body>
