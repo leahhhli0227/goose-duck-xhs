@@ -28,7 +28,6 @@
     font-size: 15px;
   }
 
-  /* HERO */
   .hero {
     background: linear-gradient(140deg, #1a1a2e 0%, #0f3460 100%);
     padding: 72px 24px 56px;
@@ -85,7 +84,6 @@
     position: relative; z-index: 1;
   }
 
-  /* LAYOUT */
   .page { max-width: 860px; margin: 0 auto; padding: 56px 24px; }
 
   .sec-title {
@@ -116,7 +114,6 @@
 
   .divider { height: 1px; background: var(--border); margin: 0 24px; }
 
-  /* 合作权益表格 */
   .collab-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -161,7 +158,6 @@
     margin-top: 4px;
   }
 
-  /* 图片 */
   .img-wrap {
     border-radius: 12px;
     overflow: hidden;
@@ -177,7 +173,6 @@
     text-align: center;
   }
 
-  /* 主题intro */
   .theme-intro {
     background: #fff;
     border-radius: 14px;
@@ -198,7 +193,6 @@
     font-size: 14px;
   }
 
-  /* 嘉宾主题四宫格 */
   .guest-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -217,7 +211,6 @@
   .guest-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
   .guest-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-  /* 直播前后 */
   .phase-label {
     display: inline-block;
     font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
@@ -230,7 +223,6 @@
   .bullet-list { padding-left: 18px; }
   .bullet-list li { margin-bottom: 7px; font-size: 14px; }
 
-  /* 直播后切片表 */
   .slice-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
   .slice-table th {
     background: var(--dark);
@@ -253,18 +245,137 @@
   .slice-table tr:nth-child(even) td { background: #fafafa; }
 
   /* 游戏薯联动 */
-  .link-box {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 18px 22px;
-    border: 1.5px solid var(--border);
-    font-size: 13px;
-    word-break: break-all;
+  .liuli-section {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 2px solid var(--border);
   }
-  .link-box a { color: var(--red); text-decoration: none; }
-  .link-box a:hover { text-decoration: underline; }
+  .liuli-hero {
+    background: linear-gradient(135deg, #6c3de0 0%, #3b1fa0 100%);
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+  .liuli-hero h2 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .liuli-hero p {
+    font-size: 14px;
+    opacity: .8;
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .liuli-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,.15);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,.9);
+    font-weight: 600;
+  }
 
-  /* FOOTER */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  @media(max-width:600px){ .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 18px;
+    border: 1.5px solid var(--border);
+  }
+  .why-icon { font-size: 20px; margin-bottom: 8px; }
+  .why-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .why-desc { font-size: 13px; color: #555; line-height: 1.6; }
+
+  .match-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  @media(max-width:600px){ .match-grid { grid-template-columns: 1fr; } }
+  .match-card {
+    background: #f7f0ff;
+    border-radius: 12px;
+    padding: 18px 16px;
+    border: 1.5px solid #d8b4fe;
+  }
+  .match-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: #7e22ce; margin-bottom: 6px; }
+  .match-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .match-desc { font-size: 12px; color: #555; line-height: 1.6; }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  @media(max-width:600px){ .resource-grid { grid-template-columns: repeat(2,1fr); } }
+  .resource-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 12px;
+    border: 1.5px solid var(--border);
+    text-align: center;
+    font-size: 12px;
+  }
+  .resource-item .r-name { font-weight: 700; margin-bottom: 4px; font-size: 13px; }
+  .resource-item .r-desc { color: var(--muted); font-size: 11px; }
+
+  .ip-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+  .ip-table th {
+    background: #6c3de0;
+    color: #fff;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .ip-table th:first-child { border-radius: 8px 0 0 0; }
+  .ip-table th:last-child  { border-radius: 0 8px 0 0; }
+  .ip-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .ip-table tr:nth-child(even) td { background: #fafafa; }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  @media(max-width:640px){ .case-grid { grid-template-columns: 1fr; } }
+  .case-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 16px;
+    border: 1.5px solid var(--border);
+  }
+  .case-tag { font-size: 11px; color: #6c3de0; font-weight: 700; margin-bottom: 6px; }
+  .case-title { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+  .case-stat { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
+  .stat-item { text-align: center; }
+  .stat-num { font-size: 18px; font-weight: 900; color: var(--red); }
+  .stat-label { font-size: 11px; color: var(--muted); }
+  .case-notes { display: flex; flex-direction: column; gap: 6px; }
+  .note-link { font-size: 12px; color: #555; text-decoration: none; line-height: 1.4; padding: 6px 8px; background: #f7f7f9; border-radius: 6px; display: block; }
+  .note-link:hover { color: var(--red); background: #fff5f7; }
+  .note-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
   .footer {
     background: var(--dark);
     color: rgba(255,255,255,.4);
@@ -325,7 +436,7 @@
       <div class="tag-row">
         <span class="tag y">艺人对接执行</span>
         <span class="tag y">PUGC切片制作传播</span>
-        <span class="tag y">KOC发布传播</span>
+        <span class="tag y">koc发布传播</span>
       </div>
     </div>
 
@@ -356,7 +467,11 @@
 
   <div class="notice">📌 策划/执行双方运营人力共担</div>
 
-
+  <div class="img-wrap">
+    <img src="https://xhs-doc.xhscdn.com/1040025031t7bfv63580c2vdnuc?redoc-w=1600&redoc-h=450" alt="鹅鸭杀活动中心" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+    <img src="https://sns-img-qc.xhscdn.com/xhscdn/1040025031t7bfv63580c2vdnuc" alt="鹅鸭杀活动中心备用" style="display:none; width:100%;" />
+    <div class="img-cap">鹅鸭杀游戏内活动中心示意</div>
+  </div>
 </div>
 
 <div class="divider"></div>
@@ -379,7 +494,11 @@
     </p>
   </div>
 
-
+  <div class="img-wrap">
+    <img src="https://xhs-doc.xhscdn.com/104004dg32311jub574063n99kg?redoc-w=1182&redoc-h=420" alt="线索猜人形式参考" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+    <img src="https://sns-img-qc.xhscdn.com/xhscdn/104004dg32311jub574063n99kg" alt="线索猜人形式参考备用" style="display:none; width:100%;" />
+    <div class="img-cap">线索投放形式参考——猜猜我是谁、明星猜剪影、号外等创意形态</div>
+  </div>
 
   <!-- 嘉宾主题 -->
   <div class="guest-grid">
@@ -402,54 +521,6 @@
       <div class="guest-emoji">🌍</div>
       <div class="guest-name">杜海涛 × 留学生</div>
       <div class="guest-desc">海涛英文水平大曝光？以防你没见过全英版鹅鸭杀</div>
-    </div>
-  </div>
-
-  <!-- 站内笔记参考 -->
-  <div style="margin-top:28px; margin-bottom:28px;">
-    <div class="sec-title" style="font-size:17px; margin-bottom:14px;">📝 站内笔记参考</div>
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px;">
-
-      <div style="background:#fff;border-radius:12px;border:1.5px solid #ebebeb;overflow:hidden;">
-        <a href="https://www.xiaohongshu.com/explore/696b40ba000000002203a1be?xsec_token=ABNGURuIJBU1yVR-8tzF5HRI_HDKkRZK612B5y3KVBOyM=&xsec_source=pc_search&source=web_explore_feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:stretch;">
-          <div style="width:4px;flex-shrink:0;background:linear-gradient(180deg,#FF2442,#ff8c69);"></div>
-          <div style="padding:12px 14px;flex:1;">
-            <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;line-height:1.45;">#鹅鸭杀 情侣组局日常</div>
-            <div style="font-size:11px;color:#888;">❤️ 点赞 &nbsp;·&nbsp; #鹅鸭杀 #情侣日常</div>
-          </div>
-        </a>
-      </div>
-
-      <div style="background:#fff;border-radius:12px;border:1.5px solid #ebebeb;overflow:hidden;">
-        <a href="https://www.xiaohongshu.com/explore/69db2a50000000002301f422?xsec_token=AByxa68BGZxmh3n-Y6idoQlSOYTOcnuXsr1dFYN7DzZyA=&xsec_source=pc_search&source=web_explore_feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:stretch;">
-          <div style="width:4px;flex-shrink:0;background:linear-gradient(180deg,#FF2442,#ff8c69);"></div>
-          <div style="padding:12px 14px;flex:1;">
-            <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;line-height:1.45;">#第五人格八周年 二创内容</div>
-            <div style="font-size:11px;color:#888;">❤️ 点赞 &nbsp;·&nbsp; #第五人格 #第五人格八周年 #第五人格二创</div>
-          </div>
-        </a>
-      </div>
-
-      <div style="background:#fff;border-radius:12px;border:1.5px solid #ebebeb;overflow:hidden;">
-        <a href="https://www.xiaohongshu.com/explore/6a17d50a000000003700e7a1?xsec_token=ABZvMiHYZYfWGNlP6b7MAXz9cEHSyaIFQsJPHJZnhRE1M=&xsec_source=pc_search&source=web_explore_feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:stretch;">
-          <div style="width:4px;flex-shrink:0;background:linear-gradient(180deg,#FF2442,#ff8c69);"></div>
-          <div style="padding:12px 14px;flex:1;">
-            <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;line-height:1.45;">笔记内容</div>
-            <div style="font-size:11px;color:#888;">❤️ 2.7万 &nbsp;·&nbsp; ⭐ 1602 &nbsp;·&nbsp; 💬 159 &nbsp;·&nbsp; 作者：小墨吖</div>
-          </div>
-        </a>
-      </div>
-
-      <div style="background:#fff;border-radius:12px;border:1.5px solid #ebebeb;overflow:hidden;">
-        <a href="https://www.xiaohongshu.com/explore/6a0c0885000000003601a9f1?xsec_token=ABwGJRMx-DrjJfVCekhz69y4azx-F2tR0EHuTcTxdtssk=&xsec_source=pc_search&source=web_explore_feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:stretch;">
-          <div style="width:4px;flex-shrink:0;background:linear-gradient(180deg,#FF2442,#ff8c69);"></div>
-          <div style="padding:12px 14px;flex:1;">
-            <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;line-height:1.45;">欻欻欻chua！#鹅鸭杀 #鹅鸭杀千层套路文学</div>
-            <div style="font-size:11px;color:#888;">❤️ 597 &nbsp;·&nbsp; 💬 104 &nbsp;·&nbsp; 作者：有狐缓缓 &nbsp;·&nbsp; #鹅鸭杀草台班子日常 #鹅鸭杀手游</div>
-          </div>
-        </a>
-      </div>
-
     </div>
   </div>
 
@@ -503,231 +574,228 @@
   </div>
 
   <!-- 游戏薯联动 -->
-  <div style="margin-top:28px;">
-    <div class="sec-title" style="font-size:17px; margin-bottom:14px;">
+  <div class="liuli-section">
+    <div class="sec-title" style="font-size:18px; margin-bottom:20px;">
       🎮 游戏薯的局联动
     </div>
 
-    <!-- 游戏薯的局：内容直接嵌入 -->
-    <div style="background:#f5f6fa;border-radius:16px;border:1.5px solid #dde1ee;overflow:hidden;">
+    <div class="liuli-hero">
+      <h2>游戏薯的局</h2>
+      <p>以游戏为主线串联，邀请影视综艺的好朋友一起组局——推开那扇门，就是一场破圈有趣的聚会</p>
+      <span class="liuli-badge">🎮 游戏 IP × 📕 小红书 × 🎬 影视综艺 = 一场破圈聚会</span>
+    </div>
 
-      <!-- 标题区 -->
-      <div style="background:linear-gradient(180deg,#eef0ff 0%,#f5f6fa 100%);padding:36px 32px 28px;text-align:center;border-bottom:1px solid #dde1ee;">
-        <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:24px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.25);font-size:12px;color:#4f46e5;font-weight:600;margin-bottom:18px;letter-spacing:1px;">🎮 小红书自制 · 厂牌型轻综艺专栏</div>
-        <h3 style="font-size:clamp(28px,4vw,42px);font-weight:900;line-height:1.15;margin-bottom:12px;background:linear-gradient(135deg,#3730a3 0%,#6366f1 50%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">游戏薯的局</h3>
-        <p style="font-size:15px;color:#4b5280;max-width:560px;margin:0 auto 18px;">以游戏为主线串联，邀请影视综艺的好朋友一起组局——推开那扇门，就是一场破圈有趣的聚会</p>
-        <div style="display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;padding:12px 24px;border-radius:12px;background:#fff;border:1px solid #dde1ee;font-size:14px;font-weight:700;">
-          <span style="color:#e05a1e;padding:4px 12px;border-radius:6px;background:rgba(255,107,53,0.12);border:1px solid rgba(255,107,53,0.25);">🎮 游戏 IP</span>
-          <span style="color:#4b5280;">×</span>
-          <span style="color:#4f46e5;padding:4px 12px;border-radius:6px;background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.25);">📕 小红书</span>
-          <span style="color:#4b5280;">×</span>
-          <span style="color:#db2777;padding:4px 12px;border-radius:6px;background:rgba(236,72,153,0.12);border:1px solid rgba(236,72,153,0.25);">🎬 影视综艺</span>
-          <span style="color:#8890b8;font-size:18px;">=</span>
-          <span style="color:#6366f1;font-weight:900;font-size:17px;">一场破圈聚会</span>
+    <!-- 为什么是游戏薯的局 -->
+    <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:var(--muted); margin-bottom:12px;">WHY · 为什么是「游戏薯的局」？</div>
+    <div class="why-grid" style="margin-bottom:28px;">
+      <div class="why-card">
+        <div class="why-icon">🎮</div>
+        <div class="why-title">游戏 = 流量发动机</div>
+        <div class="why-desc">一次新游开测、版本上线或周年庆，本身就是一波现成的破圈热度。游戏是这场局的点火器——开局就带着话题和流量进场。</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📕</div>
+        <div class="why-title">小红书 = 种草放大器</div>
+        <div class="why-desc">平台不止给曝光，更要给用户种草。热度在这里会被搜索、被种草，变成真实的「我要追这部剧、玩这个游戏」。一次声量，长出无数篇自来水笔记。</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎬</div>
+        <div class="why-title">剧/综 = 破圈引爆点</div>
+        <div class="why-desc">艺人的号召力 × 剧情/综艺话题度，让这场局从一次普通活动，变成一个有面孔、有名场面、能被全网讨论的事件。</div>
+      </div>
+    </div>
+
+    <!-- 碰出三个Match -->
+    <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:var(--muted); margin-bottom:12px;">THREE MATCH · 碰出三个 Match</div>
+    <div class="match-grid" style="margin-bottom:28px;">
+      <div class="match-card">
+        <div class="match-label">✦ 世界观 MATCH</div>
+        <div class="match-title">世界观相互映照</div>
+        <div class="match-desc">游戏 IP 与剧/综 IP 的世界观相互映照，能共同长出当期局型的 dresscode、主题餐饮、游戏环节。</div>
+      </div>
+      <div class="match-card">
+        <div class="match-label">👥 人群 MATCH</div>
+        <div class="match-title">潜在人群互导</div>
+        <div class="match-desc">游戏玩家与剧/综观众互为潜在人群，都是年轻群体，一场局能让两边人群互相导流、互相种草。</div>
+      </div>
+      <div class="match-card">
+        <div class="match-label">✦ 声量 MATCH</div>
+        <div class="match-title">声量叠加释放</div>
+        <div class="match-desc">游戏 IP 的破圈热度 × 艺人与剧综的话题度，在同一场局里叠加释放，声量大于各自单打。</div>
+      </div>
+    </div>
+
+    <!-- 局型形式 -->
+    <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:var(--muted); margin-bottom:12px;">FORMAT · 一场"被邀请的盲盒聚会"</div>
+    <div class="card" style="margin-bottom:24px;">
+      <p style="font-size:14px; color:#333; line-height:1.8; margin-bottom:14px;">录制形式，首发直播释出。每期局型根据当期游戏 IP 与剧/综方的世界观和话题来设定——Chill 局、整蛊局、Cosplay 局、复古局、暗黑局或共创局。件件都是破圈传播点，件件可被观众同款复刻。</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+        <div style="background:#f9f9f9; border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; margin-bottom:6px;">👗 Dresscode</div>
+          <div style="font-size:12px; color:#555;">「角色 cosplay」「睡衣派对」「赛博朋克」——穿什么本身就是一个梗</div>
+        </div>
+        <div style="background:#f9f9f9; border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; margin-bottom:6px;">🍹 主题特调创作</div>
+          <div style="font-size:12px; color:#555;">根据游戏 IP 与剧/综世界观设计主题餐饮，吃什么喝什么本身就是世界观的延伸</div>
+        </div>
+        <div style="background:#f9f9f9; border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; margin-bottom:6px;">🎮 游戏任务解锁</div>
+          <div style="font-size:12px; color:#555;">聚会进程解锁游戏任务，全程当鼠鼠、保护 CP 等，天然的内容切片</div>
         </div>
       </div>
+    </div>
 
-      <!-- 为什么 -->
-      <div style="padding:28px 32px;border-bottom:1px solid #dde1ee;">
-        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#4f46e5;font-weight:600;margin-bottom:8px;">WHY</div>
-        <h4 style="font-size:20px;font-weight:800;margin-bottom:6px;">为什么是「游戏薯的局」？</h4>
-        <p style="font-size:13px;color:#4b5280;margin-bottom:20px;">三大维度，定义这场局的独特价值</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;padding:22px 18px;text-align:center;border-top:3px solid #e05a1e;">
-            <div style="font-size:24px;margin-bottom:10px;">🎮</div>
-            <div style="font-size:11px;padding:2px 10px;border-radius:20px;background:rgba(255,107,53,0.1);color:#e05a1e;font-weight:700;display:inline-block;margin-bottom:8px;">燃料</div>
-            <h5 style="font-size:15px;font-weight:800;margin-bottom:8px;">游戏 = 流量发动机</h5>
-            <p style="font-size:12px;color:#4b5280;line-height:1.7;">一次新游开测、版本上线或周年庆，本身就是一波现成的破圈热度和高活跃年轻人群。游戏是这场局的点火器——开局就带着话题和流量进场。</p>
+    <!-- 拟合作游戏IP -->
+    <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:var(--muted); margin-bottom:12px;">GAME IP · 拟合作游戏 IP</div>
+    <div style="overflow-x:auto; margin-bottom:28px;">
+      <table class="ip-table">
+        <thead>
+          <tr>
+            <th>派对游戏</th>
+            <th>🏯 古风游戏</th>
+            <th>竞技</th>
+            <th>国民手游</th>
+            <th>新游</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>蛋仔派对<br>鹅鸭杀</td>
+            <td>逆水寒<br>永劫无间</td>
+            <td>三角洲行动<br>无畏契约</td>
+            <td>王者荣耀<br>和平精英</td>
+            <td>遗忘之海<br>王者万象棋</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 资源 -->
+    <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:var(--muted); margin-bottom:12px;">RESOURCES · 小红书可提供资源</div>
+    <div class="resource-grid" style="margin-bottom:28px;">
+      <div class="resource-item">
+        <div class="r-name">超级 Onebox</div>
+        <div class="r-desc">搜索结果首屏直达</div>
+      </div>
+      <div class="resource-item">
+        <div class="r-name">开屏</div>
+        <div class="r-desc">冷启强拍脸，全量用户触达</div>
+      </div>
+      <div class="resource-item">
+        <div class="r-name">Wowcard</div>
+        <div class="r-desc">信息流植入，沉浸式广告</div>
+      </div>
+      <div class="resource-item">
+        <div class="r-name">App Push</div>
+        <div class="r-desc">精准消息推送触达</div>
+      </div>
+      <div class="resource-item">
+        <div class="r-name">活动通知</div>
+        <div class="r-desc">站内活动消息直达</div>
+      </div>
+      <div class="resource-item">
+        <div class="r-name">活动页面定制</div>
+        <div class="r-desc">定制化活动承接页</div>
+      </div>
+      <div class="resource-item">
+        <div class="r-name">活动 NNS</div>
+        <div class="r-desc">Native Note 原生笔记</div>
+      </div>
+      <div class="resource-item">
+        <div class="r-name">直播/笔记流量</div>
+        <div class="r-desc">定向专属流量扶持</div>
+      </div>
+    </div>
+
+    <!-- 过往案例 -->
+    <div style="font-size:12px; font-weight:700; letter-spacing:2px; color:var(--muted); margin-bottom:12px;">CASE STUDIES · 过往破圈案例</div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-tag">游戏 × 剧宣</div>
+        <div class="case-title">小红书 & 九重紫 & 王者荣耀</div>
+        <div class="case-stat">
+          <div class="stat-item">
+            <div class="stat-num">百万+</div>
+            <div class="stat-label">看播人数</div>
           </div>
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;padding:22px 18px;text-align:center;border-top:3px solid #6366f1;">
-            <div style="font-size:24px;margin-bottom:10px;">📕</div>
-            <div style="font-size:11px;padding:2px 10px;border-radius:20px;background:rgba(99,102,241,0.1);color:#4f46e5;font-weight:700;display:inline-block;margin-bottom:8px;">场域</div>
-            <h5 style="font-size:15px;font-weight:800;margin-bottom:8px;">小红书 = 种草放大器</h5>
-            <p style="font-size:12px;color:#4b5280;line-height:1.7;">平台不止给曝光，更要给用户种草。热度在这里不会划走就忘——它会被搜索、被种草，变成真实的「我要追这部剧、玩这个游戏」。一次声量，长出无数篇自来水笔记。</p>
+          <div class="stat-item">
+            <div class="stat-num">7次</div>
+            <div class="stat-label">站内热点上榜</div>
           </div>
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;padding:22px 18px;text-align:center;border-top:3px solid #db2777;">
-            <div style="font-size:24px;margin-bottom:10px;">🎬</div>
-            <div style="font-size:11px;padding:2px 10px;border-radius:20px;background:rgba(236,72,153,0.1);color:#db2777;font-weight:700;display:inline-block;margin-bottom:8px;">引爆</div>
-            <h5 style="font-size:15px;font-weight:800;margin-bottom:8px;">剧/综 = 破圈引爆点</h5>
-            <p style="font-size:12px;color:#4b5280;line-height:1.7;">游戏有流量、小红书有场域，剧/综带来的是「人」和「故事」。艺人的号召力 × 世界观剧情/综艺话题度，让这场局从一次普通活动，变成一个有面孔、有名场面、能被全网讨论的事件。</p>
+          <div class="stat-item">
+            <div class="stat-num">5次</div>
+            <div class="stat-label">微博热搜</div>
           </div>
         </div>
-      </div>
-
-      <!-- 三个Match -->
-      <div style="padding:28px 32px;border-bottom:1px solid #dde1ee;">
-        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#4f46e5;font-weight:600;margin-bottom:8px;">THREE MATCH</div>
-        <h4 style="font-size:20px;font-weight:800;margin-bottom:20px;">碰出三个 Match</h4>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;padding:20px 16px;">
-            <div style="font-size:12px;letter-spacing:2px;color:#4f46e5;font-weight:700;margin-bottom:10px;">✦ 世界观 MATCH</div>
-            <h5 style="font-size:18px;font-weight:900;margin-bottom:10px;">世界观相互映照</h5>
-            <p style="font-size:12px;color:#4b5280;line-height:1.7;">游戏 IP 的世界观与剧/综 IP 的世界观相互映照，能共同长出当期局型的 dresscode、主题餐饮、游戏环节。</p>
-          </div>
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;padding:20px 16px;">
-            <div style="font-size:12px;letter-spacing:2px;color:#4f46e5;font-weight:700;margin-bottom:10px;">👥 人群 MATCH</div>
-            <h5 style="font-size:18px;font-weight:900;margin-bottom:10px;">潜在人群互导</h5>
-            <p style="font-size:12px;color:#4b5280;line-height:1.7;">游戏玩家与剧/综观众互为潜在人群，都是年轻群体，一场局能让两边人群互相导流、互相种草。</p>
-          </div>
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;padding:20px 16px;">
-            <div style="font-size:12px;letter-spacing:2px;color:#4f46e5;font-weight:700;margin-bottom:10px;">✦ 声量 MATCH</div>
-            <h5 style="font-size:18px;font-weight:900;margin-bottom:10px;">声量叠加释放</h5>
-            <p style="font-size:12px;color:#4b5280;line-height:1.7;">游戏 IP 的破圈热度 × 艺人与剧综的话题度，在同一场局里叠加释放，声量大于各自单打。</p>
-          </div>
+        <div class="case-notes">
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/676fb911000000001300c480?xsec_token=AB2pcD8oAyQoa-erc1tKwALIUwPUf9pIIqqSogEs8mPYU=&source=web_explore_feed" target="_blank">
+            #王者荣耀 #九重紫 国风明星直播派对
+            <div class="note-meta">❤️ 8.9万 ⭐ 7110 💬 224</div>
+          </a>
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/676fc9c200000000090170dc?xsec_token=AB2pcD8oAyQoa-erc1tKwALO8u5qX2ZcsBvKlcxqylG_s=&source=web_note_detail_r10" target="_blank">
+            「所以你们家到底谁做主？」
+            <div class="note-meta">❤️ 1.7万 ⭐ 1971 💬 104</div>
+          </a>
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/676fd4fe000000000900f7ea?xsec_token=AB2pcD8oAyQoa-erc1tKwALIHTmq_5MbhM_pbHHV06MfA=&source=web_explore_feed" target="_blank">
+            我就知道这次是真的不一样！
+            <div class="note-meta">❤️ 9402 ⭐ 1159 💬 46</div>
+          </a>
         </div>
       </div>
-
-      <!-- 拟合作游戏IP -->
-      <div style="padding:28px 32px;border-bottom:1px solid #dde1ee;">
-        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#4f46e5;font-weight:600;margin-bottom:8px;">GAME IP</div>
-        <h4 style="font-size:20px;font-weight:800;margin-bottom:16px;">拟合作游戏 IP</h4>
-        <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;overflow:hidden;">
-          <table style="width:100%;border-collapse:collapse;font-size:13px;">
-            <thead>
-              <tr>
-                <th style="background:#f0f1f8;color:#4f46e5;font-weight:700;padding:12px 16px;text-align:center;border-bottom:1px solid #dde1ee;">🎉 派对游戏</th>
-                <th style="background:#f0f1f8;color:#4f46e5;font-weight:700;padding:12px 16px;text-align:center;border-bottom:1px solid #dde1ee;">🏯 古风游戏</th>
-                <th style="background:#f0f1f8;color:#4f46e5;font-weight:700;padding:12px 16px;text-align:center;border-bottom:1px solid #dde1ee;">⚔️ 竞技</th>
-                <th style="background:#f0f1f8;color:#4f46e5;font-weight:700;padding:12px 16px;text-align:center;border-bottom:1px solid #dde1ee;">🏆 国民手游</th>
-                <th style="background:#f0f1f8;color:#4f46e5;font-weight:700;padding:12px 16px;text-align:center;border-bottom:1px solid #dde1ee;">🆕 新游</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding:12px 16px;text-align:center;color:#1a1d2e;">蛋仔派对<br>鹅鸭杀</td>
-                <td style="padding:12px 16px;text-align:center;color:#1a1d2e;">逆水寒<br>永劫无间</td>
-                <td style="padding:12px 16px;text-align:center;color:#1a1d2e;">三角洲行动<br>无畏契约</td>
-                <td style="padding:12px 16px;text-align:center;color:#1a1d2e;">王者荣耀<br>和平精英</td>
-                <td style="padding:12px 16px;text-align:center;color:#1a1d2e;">遗忘之海<br>王者万象棋</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="case-card">
+        <div class="case-tag">游戏内资源 · 游戏 × 艺人 COS</div>
+        <div class="case-title">小红书 & 刘宇 & 逆水寒</div>
+        <div class="case-stat">
+          <div class="stat-item">
+            <div class="stat-num">16万</div>
+            <div class="stat-label">篇均点赞</div>
+          </div>
+        </div>
+        <div style="font-size:12px; color:#555; margin-bottom:10px;">国风COS 视觉盛宴席卷全站</div>
+        <div class="case-notes">
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/69859ab6000000000e00f0f0" target="_blank">
+            自在之地
+            <div class="note-meta">❤️ 10万+ ⭐ 3万 💬 7032</div>
+          </a>
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/6986d536000000001a0232bf" target="_blank">
+            天涯路远谁人了解
+            <div class="note-meta">❤️ 10万+ ⭐ 1.7万 💬 4131</div>
+          </a>
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/698d4ce6000000001a029210" target="_blank">
+            琵琶一响，鸿运自然来！
+            <div class="note-meta">❤️ 8万 ⭐ 9357 💬 2991</div>
+          </a>
         </div>
       </div>
-
-      <!-- 过往案例 -->
-      <div style="padding:28px 32px;">
-        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#4f46e5;font-weight:600;margin-bottom:8px;">CASE STUDIES</div>
-        <h4 style="font-size:20px;font-weight:800;margin-bottom:6px;">过往破圈案例</h4>
-        <p style="font-size:13px;color:#4b5280;margin-bottom:20px;">游戏 × 艺人 × 多元内容，声量叠加释放</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-
-          <!-- 案例1 -->
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;overflow:hidden;">
-            <div style="padding:14px 16px;border-bottom:1px solid #dde1ee;">
-              <div style="display:inline-block;padding:4px 12px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.4);border-radius:20px;font-size:12px;font-weight:700;color:#818cf8;margin-bottom:8px;">游戏 × 剧宣</div>
-              <div style="font-size:14px;font-weight:700;color:#1a1d2e;">小红书 &amp; 九重紫 &amp; 王者荣耀</div>
-            </div>
-            <div style="display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid #dde1ee;">
-              <div style="flex:1;padding:8px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border:1.5px solid rgba(251,191,36,0.35);border-radius:8px;text-align:center;">
-                <div style="font-size:14px;font-weight:800;color:#b45309;">百万+</div>
-                <div style="font-size:10px;color:#92400e;">看播人数</div>
-              </div>
-              <div style="flex:1;padding:8px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border:1.5px solid rgba(251,191,36,0.35);border-radius:8px;text-align:center;">
-                <div style="font-size:14px;font-weight:800;color:#b45309;">7次</div>
-                <div style="font-size:10px;color:#92400e;">站内热点上榜</div>
-              </div>
-              <div style="flex:1;padding:8px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border:1.5px solid rgba(251,191,36,0.35);border-radius:8px;text-align:center;">
-                <div style="font-size:14px;font-weight:800;color:#b45309;">5次</div>
-                <div style="font-size:10px;color:#92400e;">微博热搜</div>
-              </div>
-            </div>
-            <div style="padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid #dde1ee;">
-              <span style="padding:3px 8px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(251,146,60,0.1));border:1px solid rgba(239,68,68,0.3);border-radius:20px;font-size:10px;font-weight:700;color:#dc2626;">#王者荣耀和九重紫的适配度</span>
-              <span style="padding:3px 8px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(251,146,60,0.1));border:1px solid rgba(239,68,68,0.3);border-radius:20px;font-size:10px;font-weight:700;color:#dc2626;">#假如九重紫宋墨是游戏英雄</span>
-            </div>
-            <div style="padding:10px 16px;background:rgba(255,107,53,0.06);font-size:11px;font-weight:600;color:#e05a1e;">📝 站内笔记</div>
-            <div style="padding:8px;display:flex;flex-direction:column;gap:6px;">
-              <a href="https://www.xiaohongshu.com/explore/676fb911000000001300c480" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;background:#f0f1f8;border-radius:8px;border:1px solid #dde1ee;overflow:hidden;">
-                <div style="width:3px;flex-shrink:0;height:100%;background:linear-gradient(180deg,#6366f1,#db2777);align-self:stretch;"></div>
-                <div style="padding:8px 10px;flex:1;">
-                  <div style="font-size:12px;font-weight:700;color:#1a1d2e;margin-bottom:4px;">#王者荣耀 #九重紫 国风明星直播派对</div>
-                  <div style="font-size:10px;color:#8890b8;">❤️ 8.9万 &nbsp;⭐ 7110 &nbsp;💬 224</div>
-                </div>
-              </a>
-              <a href="https://www.xiaohongshu.com/explore/676fc9c200000000090170dc" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;background:#f0f1f8;border-radius:8px;border:1px solid #dde1ee;overflow:hidden;">
-                <div style="width:3px;flex-shrink:0;height:100%;background:linear-gradient(180deg,#6366f1,#db2777);align-self:stretch;"></div>
-                <div style="padding:8px 10px;flex:1;">
-                  <div style="font-size:12px;font-weight:700;color:#1a1d2e;margin-bottom:4px;">"所以你们家到底谁做主？"</div>
-                  <div style="font-size:10px;color:#8890b8;">❤️ 1.7万 &nbsp;⭐ 1971 &nbsp;💬 104</div>
-                </div>
-              </a>
-            </div>
+      <div class="case-card">
+        <div class="case-tag">🔥 小红书热点 · 游戏 × 艺人 技术力</div>
+        <div class="case-title">双高胎 & 游戏薯</div>
+        <div class="case-stat">
+          <div class="stat-item">
+            <div class="stat-num">3万+</div>
+            <div class="stat-label">直播同时在线</div>
           </div>
-
-          <!-- 案例2 -->
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;overflow:hidden;">
-            <div style="padding:14px 16px;border-bottom:1px solid #dde1ee;">
-              <div style="display:inline-block;padding:4px 12px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.4);border-radius:20px;font-size:12px;font-weight:700;color:#818cf8;margin-bottom:8px;">游戏 × 艺人 COS</div>
-              <div style="font-size:14px;font-weight:700;color:#1a1d2e;">小红书 &amp; 刘宇 &amp; 逆水寒</div>
-            </div>
-            <div style="display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid #dde1ee;">
-              <div style="flex:1;padding:8px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border:1.5px solid rgba(251,191,36,0.35);border-radius:8px;text-align:center;">
-                <div style="font-size:14px;font-weight:800;color:#b45309;">16万</div>
-                <div style="font-size:10px;color:#92400e;">篇均点赞</div>
-              </div>
-              <div style="flex:1;padding:8px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border:1.5px solid rgba(251,191,36,0.35);border-radius:8px;text-align:center;">
-                <div style="font-size:13px;font-weight:800;color:#b45309;">国风COS</div>
-                <div style="font-size:10px;color:#92400e;">视觉盛宴席卷全站</div>
-              </div>
-            </div>
-            <div style="padding:10px 16px;background:rgba(255,107,53,0.06);font-size:11px;font-weight:600;color:#e05a1e;">📝 站内笔记</div>
-            <div style="padding:8px;display:flex;flex-direction:column;gap:6px;">
-              <a href="https://www.xiaohongshu.com/explore/69859ab6000000000e00f0f0" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;background:#f0f1f8;border-radius:8px;border:1px solid #dde1ee;overflow:hidden;">
-                <div style="width:3px;flex-shrink:0;background:linear-gradient(180deg,#6366f1,#db2777);align-self:stretch;"></div>
-                <div style="padding:8px 10px;flex:1;">
-                  <div style="font-size:12px;font-weight:700;color:#1a1d2e;margin-bottom:4px;">自在之地</div>
-                  <div style="font-size:10px;color:#8890b8;">❤️ 10万+ &nbsp;⭐ 3万 &nbsp;💬 7032</div>
-                </div>
-              </a>
-              <a href="https://www.xiaohongshu.com/explore/6986d536000000001a0232bf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;background:#f0f1f8;border-radius:8px;border:1px solid #dde1ee;overflow:hidden;">
-                <div style="width:3px;flex-shrink:0;background:linear-gradient(180deg,#6366f1,#db2777);align-self:stretch;"></div>
-                <div style="padding:8px 10px;flex:1;">
-                  <div style="font-size:12px;font-weight:700;color:#1a1d2e;margin-bottom:4px;">天涯路远谁人了解</div>
-                  <div style="font-size:10px;color:#8890b8;">❤️ 10万+ &nbsp;⭐ 1.7万 &nbsp;💬 4131</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <!-- 案例3 -->
-          <div style="background:#fff;border:1px solid #dde1ee;border-radius:12px;overflow:hidden;">
-            <div style="padding:14px 16px;border-bottom:1px solid #dde1ee;">
-              <div style="display:inline-block;padding:4px 12px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.4);border-radius:20px;font-size:12px;font-weight:700;color:#818cf8;margin-bottom:8px;">游戏 × 艺人 技术力</div>
-              <div style="font-size:14px;font-weight:700;color:#1a1d2e;">双高胎 &amp; 游戏薯</div>
-            </div>
-            <div style="display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid #dde1ee;">
-              <div style="flex:1;padding:8px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border:1.5px solid rgba(251,191,36,0.35);border-radius:8px;text-align:center;">
-                <div style="font-size:14px;font-weight:800;color:#b45309;">3万+</div>
-                <div style="font-size:10px;color:#92400e;">直播同时在线</div>
-              </div>
-              <div style="flex:1;padding:8px;background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.05));border:1.5px solid rgba(251,191,36,0.35);border-radius:8px;text-align:center;">
-                <div style="font-size:13px;font-weight:800;color:#b45309;">站内领先</div>
-                <div style="font-size:10px;color:#92400e;">reaction实况讨论</div>
-              </div>
-            </div>
-            <div style="padding:10px 16px;background:rgba(255,107,53,0.06);font-size:11px;font-weight:600;color:#e05a1e;">📝 站内笔记</div>
-            <div style="padding:8px;display:flex;flex-direction:column;gap:6px;">
-              <a href="https://www.xiaohongshu.com/explore/6977229c000000001a028bcb" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;background:#f0f1f8;border-radius:8px;border:1px solid #dde1ee;overflow:hidden;">
-                <div style="width:3px;flex-shrink:0;background:linear-gradient(180deg,#6366f1,#db2777);align-self:stretch;"></div>
-                <div style="padding:8px 10px;flex:1;">
-                  <div style="font-size:12px;font-weight:700;color:#1a1d2e;margin-bottom:4px;">我们竟然穿越到游戏平行世界了？！</div>
-                  <div style="font-size:10px;color:#8890b8;">❤️ 4.4万 &nbsp;⭐ 4467 &nbsp;💬 3696</div>
-                </div>
-              </a>
-              <a href="https://www.xiaohongshu.com/explore/697f6f8b000000002203066c" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;background:#f0f1f8;border-radius:8px;border:1px solid #dde1ee;overflow:hidden;">
-                <div style="width:3px;flex-shrink:0;background:linear-gradient(180deg,#6366f1,#db2777);align-self:stretch;"></div>
-                <div style="padding:8px 10px;flex:1;">
-                  <div style="font-size:12px;font-weight:700;color:#1a1d2e;margin-bottom:4px;">对双高游戏水平有实感了</div>
-                  <div style="font-size:10px;color:#8890b8;">❤️ 1万 &nbsp;⭐ 241 &nbsp;💬 88</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
+        </div>
+        <div style="font-size:12px; color:#555; margin-bottom:10px;">站内领先 reaction 实况讨论</div>
+        <div class="case-notes">
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/6977229c000000001a028bcb?xsec_token=AByxebZCOjgt89kzKrlL21wiH3eezGRWyvEqRilUKUkKk=&xsec_source=pc_search&source=web_explore_feed" target="_blank">
+            我们竟然穿越到游戏平行世界了？！
+            <div class="note-meta">❤️ 4.4万 ⭐ 4467 💬 3696</div>
+          </a>
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/697f6f8b000000002203066c" target="_blank">
+            对双高游戏水平有实感了
+            <div class="note-meta">❤️ 1万 ⭐ 241 💬 88</div>
+          </a>
+          <a class="note-link" href="https://www.xiaohongshu.com/explore/697f710d000000000e00d9d0" target="_blank">
+            越子你害羞啥呢
+            <div class="note-meta">❤️ 1.4万 ⭐ 2301 💬 143</div>
+          </a>
         </div>
       </div>
+    </div>
 
+    <div style="text-align:center; padding:20px; background:#f7f0ff; border-radius:12px; font-weight:700; color:#6c3de0;">
+      🎮 一起组局，一起破圈
     </div>
   </div>
 </div>
