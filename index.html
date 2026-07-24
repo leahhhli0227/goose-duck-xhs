@@ -210,17 +210,45 @@
   .guest-emoji { font-size: 26px; margin-bottom: 8px; }
   .guest-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
   .guest-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .guest-note {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 11px;
-    color: var(--red);
+  .guest-note-card {
+    display: block;
+    margin-top: 12px;
     text-decoration: none;
-    border: 1px solid rgba(255,36,66,.3);
-    border-radius: 20px;
-    padding: 2px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: box-shadow .2s;
   }
-  .guest-note:hover { background: rgba(255,36,66,.06); }
+  .guest-note-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+  .note-cover {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    display: block;
+    background: #eee;
+  }
+  .note-info {
+    padding: 8px 10px;
+    background: #fff;
+  }
+  .note-title {
+    font-size: 12px;
+    color: #222;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .note-stats {
+    display: flex;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .note-stat { display: flex; align-items: center; gap: 2px; }
 
   .phase-label {
     display: inline-block;
@@ -512,25 +540,65 @@
       <div class="guest-emoji">💑</div>
       <div class="guest-name">杜海涛 × 沈梦辰</div>
       <div class="guest-desc">八百个心眼子，当情侣开始玩鹅鸭杀</div>
-      <a class="guest-note" href="https://www.xiaohongshu.com/explore/696b40ba000000002203a1be?xsec_token=ABNGURuIJBU1yVR-8tzF5HRI_HDKkRZK612B5y3KVBOyM=&xsec_source=pc_search&source=web_explore_feed" target="_blank">📝 笔记参考</a>
+      <a class="guest-note-card" href="https://www.xiaohongshu.com/explore/696b40ba000000002203a1be?xsec_token=ABNGURuIJBU1yVR-8tzF5HRI_HDKkRZK612B5y3KVBOyM=&xsec_source=pc_search&source=web_explore_feed" target="_blank">
+        <img class="note-cover" src="https://sns-video-bd.xhscdn.com/stream/79/110/258/01e96b409c9d0f740010000000019bcaf4dd44_0.jpg" alt="笔记封面" onerror="this.style.background='#f0f0f0'" />
+        <div class="note-info">
+          <div class="note-title">双双夫妻玩鹅鸭杀最爽的事情 be like</div>
+          <div class="note-stats">
+            <span class="note-stat">❤️ 10万+</span>
+            <span class="note-stat">⭐ 2.3万</span>
+            <span class="note-stat">💬 514</span>
+          </div>
+        </div>
+      </a>
     </div>
     <div class="guest-card">
       <div class="guest-emoji">🎤</div>
       <div class="guest-name">杜海涛 × 歌手</div>
       <div class="guest-desc">激情开麦！语音房秒变KTV</div>
-      <a class="guest-note" href="https://www.xiaohongshu.com/explore/69db2a50000000002301f422?xsec_token=AByxa68BGZxmh3n-Y6idoQlSOYTOcnuXsr1dFYN7DzZyA=&xsec_source=pc_search&source=web_explore_feed" target="_blank">📝 笔记参考</a>
+      <a class="guest-note-card" href="https://www.xiaohongshu.com/explore/69db2a50000000002301f422?xsec_token=AByxa68BGZxmh3n-Y6idoQlSOYTOcnuXsr1dFYN7DzZyA=&xsec_source=pc_search&source=web_explore_feed" target="_blank">
+        <img class="note-cover" src="https://sns-video-qc.xhscdn.com/stream/1/110/258/01e9db2a5009db2f010370019d801db673_0.jpg" alt="笔记封面" onerror="this.style.background='#f0f0f0'" />
+        <div class="note-info">
+          <div class="note-title">今夕是何年 · 当联合里都是歌神时 #第五人格</div>
+          <div class="note-stats">
+            <span class="note-stat">❤️ 3.2万</span>
+            <span class="note-stat">⭐ 9209</span>
+            <span class="note-stat">💬 2013</span>
+          </div>
+        </div>
+      </a>
     </div>
     <div class="guest-card">
       <div class="guest-emoji">🎙️</div>
       <div class="guest-name">杜海涛 × 喜人/脱口秀演员</div>
       <div class="guest-desc">巧舌如簧篇！口艺人同台「演戏」谁最能说？</div>
-      <a class="guest-note" href="https://www.xiaohongshu.com/explore/6a17d50a000000003700e7a1?xsec_token=ABZvMiHYZYfWGNlP6b7MAXz9cEHSyaIFQsJPHJZnhRE1M=&xsec_source=pc_search&source=web_explore_feed" target="_blank">📝 笔记参考</a>
+      <a class="guest-note-card" href="https://www.xiaohongshu.com/explore/6a17d50a000000003700e7a1?xsec_token=ABZvMiHYZYfWGNlP6b7MAXz9cEHSyaIFQsJPHJZnhRE1M=&xsec_source=pc_search&source=web_explore_feed" target="_blank">
+        <img class="note-cover" src="http://sns-webpic-qc.xhscdn.com/202607250317/dd70822d8babde8815eca60d6d9d159a/spectrum/1040g0k0320muvcgtle005qe2jtockjj6c9tetf8!nd_dft_wgth_jpg_3" alt="笔记封面" onerror="this.style.background='#f0f0f0'" />
+        <div class="note-info">
+          <div class="note-title">喜人狼人杀原来有这么多“大聪明”法官，笑不活了！</div>
+          <div class="note-stats">
+            <span class="note-stat">❤️ 2.7万</span>
+            <span class="note-stat">⭐ 1602</span>
+            <span class="note-stat">💬 159</span>
+          </div>
+        </div>
+      </a>
     </div>
     <div class="guest-card">
       <div class="guest-emoji">🌍</div>
       <div class="guest-name">杜海涛 × 留学生</div>
       <div class="guest-desc">海涛英文水平大曝光？以防你没见过全英版鹅鸭杀</div>
-      <a class="guest-note" href="https://www.xiaohongshu.com/explore/6a0c0885000000003601a9f1?xsec_token=ABwGJRMx-DrjJfVCekhz69y4azx-F2tR0EHuTcTxdtssk=" target="_blank">📝 笔记参考</a>
+      <a class="guest-note-card" href="https://www.xiaohongshu.com/explore/6a0c0885000000003601a9f1?xsec_token=ABwGJRMx-DrjJfVCekhz69y4azx-F2tR0EHuTcTxdtssk=" target="_blank">
+        <img class="note-cover" src="https://sns-video-qc.xhscdn.com/stream/1/110/258/01e9db2a5009db2f010370019d801db673_0.jpg" alt="笔记封面" style="background:#333;" />
+        <div class="note-info">
+          <div class="note-title">英文鹅鸭杀｜👀🔪面刀的英文是什么？散装英语大困局</div>
+          <div class="note-stats">
+            <span class="note-stat">❤️ 597</span>
+            <span class="note-stat">⭐ 65</span>
+            <span class="note-stat">💬 104</span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 
